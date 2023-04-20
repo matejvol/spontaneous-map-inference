@@ -1,0 +1,45 @@
+# parameters for spike extraction
+thr_factor: -3. # negative: minima of spike waveforms extracted
+              # positive: maxima of spike waveforms extracted
+synchrofact_size: 2
+
+interpolate: 'maps'
+events: False
+event_binsize: 3 #median
+min_event_duration: 0. # 2. # 1. # always used by filter
+max_event_duration: 1000. # 5. # 5. # always used by filter
+#min_frame_sum: 1.
+#max_frame_sum: 200
+frame_type: 'sum' # 'sum' # 'filter_max' # sum or max or filter
+active_frames_thr: 0.001
+imaging_kernel: 0.5
+
+interpolation_factor: 3 #8
+back_interpolate: True
+correlation_threshold: 0.1 # only correlations above this number considered
+
+remove_PCA_dims: 1 # remove first 2 PCA dimensions
+
+only_oriented: True
+snr_th: 0.
+fr_th: 0.
+bad_channel_value: -2. # set to int < -1
+
+min_eyes_closed: 60. #60.
+split_constant: 0.
+
+reference_type: 'original'
+
+control: 'unif'  # perm/unif
+control_type: 'spontaneous'  # spontaneous/orientation
+save_controls: True
+permutations: 5000
+
+patient_lower_half_only: False # not used
+
+subtract_mean: True
+
+tuning_width_thr: 10 # 10  # original 5
+pva_thr: 65 # 65  # original 60
+
+muae_filter: -1  # -1 - no filter, otherwise lowpass filter MUAe
